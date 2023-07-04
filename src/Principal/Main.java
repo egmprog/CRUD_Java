@@ -59,7 +59,11 @@ public class Main {
                     // Sub menu modificar alumno
                     // para modificar los datos se recurre al método modificarAlumno de la clase
                     // GestionAlumno.java
+                    
+                    miGestion.modificarAlumno();
 
+
+                    /* 
                     System.out.println(listaDeAlumnos);
 
                     // Mostrar el contenido en una ventana emergente con indicaciones del
@@ -73,7 +77,7 @@ public class Main {
 
                     miGestion.eliminarAlumno();
                     miGestion.addAlumno(nombre, apellido, email, dni, comision);
-
+                    */
                     break;
                 case 5:
                     // Sub menu buscar alumno

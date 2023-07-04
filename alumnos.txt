@@ -1,11 +1,6 @@
 Apellidos, Nombres, DNI, Email, Comision
-Juan, Lopez, 12345678, juan@gmail.com, 12345
-Pedro, Lee, 12345678, lee@gmail.com, 12345
 Ana, Garcia, 12345678, ana@gmail.com, 12345
-Jose, Lopez, 12345678, jose@aa.bb, 12345
-Ariel, Join, 78945612, andres@aa.bb, 12345
-Lucas, Amirlo, 45612378, lucas@aa.bb, 12345
-Miguel, Ann, 14725896, aa@aa.aa, 12345
+ArielMiguel, Ann, 14725896, aa@aa.aa, 12345
 Gricelda, Torr, 96325874, bcvf@man.cc, 78945
 Lia, Fernandez, 45685236, aaa@bb.nn, 12345
 Pepe, Pais, 45685296, pepe@aa.bb, 12345
