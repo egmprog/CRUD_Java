@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
+
 
 import javax.swing.JOptionPane;
 
@@ -19,7 +19,6 @@ public class GestionAlumno {
     public GestionAlumno(ArrayList<Alumno> listaDeAlumnos) {
         this.listaDeAlumnos = new ArrayList<>();
         this.listaDeAlumnos = listaDeAlumnos;
-
     }
 
     public GestionAlumno() {
@@ -160,6 +159,7 @@ public class GestionAlumno {
     // --------------------------------------------------------------------------------------------------
     // método para MODIFICAR alumno
         public void modificarAlumno() {
+
         // Leer el archivo de texto y almacenar los datos en una estructura de datos
         ArrayList<String> lineas3 = new ArrayList<>();
         try {
@@ -185,8 +185,7 @@ public class GestionAlumno {
 
         // recorro el arrayList identificando lineas
         for (int a = 0; a < lineas3.size(); a++) {
-            //System.out.println("Linea: " + a + " - " + lineas3.get(a));
-
+            
             // transformo el contenido de 'linea3' en una secuencia de elementos
             String oracion = lineas3.get(a).toString();
             //se borran los espacios en blanco
@@ -203,7 +202,8 @@ public class GestionAlumno {
 
             // comparo el término de búsqueda con los elementos del arrayList anterior
             
-            for(int b=0; b<=4;b++){
+            for(int b=0; b<5; b++){
+                    System.out.println(terminos[b]);
                 if(terminos[b].equals(aBuscar)){
                     encontrado=true;
                     System.out.println("terminos ["+b+"] "+terminos[b]);
@@ -223,32 +223,27 @@ public class GestionAlumno {
 
                     //ingreso del texto que a modificar 
                     String loNuevo=JOptionPane.showInputDialog("Aquí se puede modificar el elemento encontrado «"+aBuscar+"» por uno nuevo");
-                    //System.out.println(lineas3);
-                    
-                    //System.out.println("terminos antes "+terminos[b]);
+                                
                     //se reemplaza el término hallado por su nuevo valor
                     terminos[b] = loNuevo;
-                    //System.out.println("terminos despues "+terminos[b]);
-                    //System.out.println("lonuevo "+loNuevo);
+            
                     //se agrega la nueva linea modificada al arrayList para guardarlo en el archivo
-                    lineas3.set(a, String.join(",", terminos));
-
-                    System.out.println(lineas3);
-
-                    
+                    lineas3.set(a, String.join(",", terminos));    
+                    break;                           
                     }
-                    break;
+                    
             }
+            
             
 
         }
-        // Si se completó toda la busqueda sin ninguna coincidencia, se muestra un
-        // mensaje
+        // Si se completó toda la busqueda sin ninguna coincidencia, se muestra un mensaje
+        
         if (encontrado) {
 
         } 
         else {
-            JOptionPane.showMessageDialog(null, "El término " + aBuscar + " NO se ha encontrado", "Fin de la búsqueda",
+            JOptionPane.showMessageDialog(null," La búsqueda ha finalizado", "Aviso",
                     JOptionPane.ERROR_MESSAGE);
         }
 
@@ -260,14 +255,12 @@ public class GestionAlumno {
                     bw3.write(linea);
                 }
 
-                bw3.close();
-
-                System.out.println("La línea ha sido modificada en el archivo.");
-                JOptionPane.showMessageDialog(null, "La linea ha sido modificada en el archivo.", "Acción realizada",
+                bw3.close();                
+                JOptionPane.showMessageDialog(null, "El archivo de ha actualizado.", "Acción realizada",
                         JOptionPane.INFORMATION_MESSAGE);
             } catch (IOException e) {
                 e.printStackTrace();
-            //}
+        
         }
 
     }
@@ -276,9 +269,7 @@ public class GestionAlumno {
     // --------------------------------------------------------------------------------------------------
     // método para BUSCAR alumno
 
-    private void set(int a, String loNuevo) {
-        }
-
+    
     public void buscarAlumno() {
         // Leer el archivo de texto y almacenar los datos en una estructura de datos
         ArrayList<String> lineas3 = new ArrayList<>();

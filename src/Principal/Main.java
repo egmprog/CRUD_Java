@@ -1,7 +1,11 @@
 package Principal;
 
 import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  * Comentarios de documentación
@@ -16,12 +20,20 @@ public class Main {
     public static void main(String[] args) {
 
         // declaración de variables
-
         String nombre = "", apellido = "", email = "";
         int menu = 0, dni = 0, comision = 0;
         ArrayList<Alumno> listaDeAlumnos = new ArrayList<Alumno>();
         GestionAlumno miGestion = new GestionAlumno();
 
+        // Crear un panel personalizado para incluir la imagen y el mensaje
+        JPanel panel = new JPanel();
+        ImageIcon icon = new ImageIcon("..\\TF_CaCinicial_v02\\src\\Principal\\logo.png");
+        JLabel label = new JLabel("SISTEMA DE GESTIÓN DE ALUMNOS", icon, JLabel.CENTER);
+        panel.add(label);
+        
+        //pantalla inicial de bienvenida
+        JOptionPane.showMessageDialog(null, panel, "B i e n v e n i d o s", JOptionPane.PLAIN_MESSAGE);
+                
         // menu principal de opciones
 
         while (menu != 6) {
@@ -36,9 +48,9 @@ public class Main {
             switch (menu) {
                 case 1:
                     // Sub menu ingresar alumno
-
                     // para cargar los datos se recurre al método addAlumno de la clase
                     // GestionAlumno.java
+
                     miGestion.addAlumno(nombre, apellido, email, dni, comision);
                     break;
                 case 2:
@@ -61,23 +73,7 @@ public class Main {
                     // GestionAlumno.java
                     
                     miGestion.modificarAlumno();
-
-
-                    /* 
-                    System.out.println(listaDeAlumnos);
-
-                    // Mostrar el contenido en una ventana emergente con indicaciones del
-                    // procedimiento
-                    JOptionPane.showMessageDialog(null, "Para modificar un registro:    " + "\n"
-                            +
-                            "1.- Se despliega una lista de los registros" + "\n" +
-                            "2.- Se elimina el registro por modificar" + "\n" +
-                            "3.- Se ingresa nuevamente los nuevos datos" + "\n",
-                            "Procedimiento para modificar un registro", JOptionPane.ERROR_MESSAGE);
-
-                    miGestion.eliminarAlumno();
-                    miGestion.addAlumno(nombre, apellido, email, dni, comision);
-                    */
+                    
                     break;
                 case 5:
                     // Sub menu buscar alumno
