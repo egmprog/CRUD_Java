@@ -185,7 +185,7 @@ public class GestionAlumno {
 
         // recorro el arrayList identificando lineas
         for (int a = 0; a < lineas3.size(); a++) {
-            System.out.println("Linea: " + a + " - " + lineas3.get(a));
+            //System.out.println("Linea: " + a + " - " + lineas3.get(a));
 
             // transformo el contenido de 'linea3' en una secuencia de elementos
             String oracion = lineas3.get(a).toString();
@@ -196,50 +196,63 @@ public class GestionAlumno {
             // ubicandolos dentro de un arrayList
             String[] terminos = oracion.split(",");
             System.out.println("terminos: "+terminos);
+            System.out.println("oracion: "+oracion);
 
             // vuelvo a false el elemento de busqueda antes de cada ciclo
             encontrado = false;
 
             // comparo el término de búsqueda con los elementos del arrayList anterior
             
-            for (String elemento : terminos) {
-                if (elemento.equals(aBuscar)) {
-                    encontrado = true;
+            for(int b=0; b<=4;b++){
+                if(terminos[b].equals(aBuscar)){
+                    encontrado=true;
+                    System.out.println("terminos ["+b+"] "+terminos[b]);
+                    System.out.println("encontrado "+encontrado);
                 }
+                    
+                    // si el elemento buscado se encuentra: se notifica, se muestra el registro completo.
+                    // Luego se sigue recorriendo otros registros buscando nuevas coincidencias.
+            
+                if (encontrado) {
+                    System.out.println("El término " + aBuscar + " se ha encontrado");
+                    JOptionPane.showMessageDialog(null, "El término " + aBuscar + " se ha encontrado", "Fin de la búsqueda",
+                            JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Los datos del registro son " + "\n" + "(El número inicial es el «registro»)" + "\n"+a+"- "+ lineas3.get(a),
+                            "Fin de la búsqueda",
+                            JOptionPane.INFORMATION_MESSAGE);
+
+                    //ingreso del texto que a modificar 
+                    String loNuevo=JOptionPane.showInputDialog("Aquí se puede modificar el elemento encontrado «"+aBuscar+"» por uno nuevo");
+                    //System.out.println(lineas3);
+                    
+                    //System.out.println("terminos antes "+terminos[b]);
+                    //se reemplaza el término hallado por su nuevo valor
+                    terminos[b] = loNuevo;
+                    //System.out.println("terminos despues "+terminos[b]);
+                    //System.out.println("lonuevo "+loNuevo);
+                    //se agrega la nueva linea modificada al arrayList para guardarlo en el archivo
+                    lineas3.set(a, String.join(",", terminos));
+
+                    System.out.println(lineas3);
+
+                    
+                    }
+                    break;
             }
-            // si el elemento buscado se encuentra: se notifica, se muestra el registro
-            // completo. Luego se sigue recorriendo otros registros buscando nuevas
-            // coincidencias
-            if (encontrado) {
-                System.out.println("El término " + aBuscar + " se ha encontrado");
-                JOptionPane.showMessageDialog(null, "El término " + aBuscar + " se ha encontrado", "Fin de la búsqueda",
-                        JOptionPane.ERROR_MESSAGE);
-                JOptionPane.showMessageDialog(null, "Los datos del registro son " + "\n" + "(El número inicial es el «registro»)" + "\n"+a+"- "+ lineas3.get(a),
-                        "Fin de la búsqueda",
-                        JOptionPane.ERROR_MESSAGE);
-
-                    //ingreso del texto que se modifica 
-                String loNuevo=JOptionPane.showInputDialog("Aquí se puede modificar el elemento buscado «"+aBuscar+"» por uno nuevo");
-                System.out.println(lineas3);
-                
-                //String[] elemento.set(a,loNuevo);
-                System.out.println(lineas3);
-
-                 
-
-            }
+            
 
         }
         // Si se completó toda la busqueda sin ninguna coincidencia, se muestra un
         // mensaje
         if (encontrado) {
 
-        } else {
+        } 
+        else {
             JOptionPane.showMessageDialog(null, "El término " + aBuscar + " NO se ha encontrado", "Fin de la búsqueda",
                     JOptionPane.ERROR_MESSAGE);
         }
 
-        // Escribir las líneas restantes de vuelta al archivo de texto
+            // Escribir las líneas restantes de vuelta al archivo de texto
             try {
                 BufferedWriter bw3 = new BufferedWriter(new FileWriter("alumnos.txt"));
 
@@ -251,10 +264,11 @@ public class GestionAlumno {
 
                 System.out.println("La línea ha sido modificada en el archivo.");
                 JOptionPane.showMessageDialog(null, "La linea ha sido modificada en el archivo.", "Acción realizada",
-                        JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.INFORMATION_MESSAGE);
             } catch (IOException e) {
                 e.printStackTrace();
-            }
+            //}
+        }
 
     }
 
