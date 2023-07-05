@@ -1,7 +1,5 @@
 package Principal;
 
-import java.util.ArrayList;
-
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -21,8 +19,7 @@ public class Main {
 
         // declaración de variables
         String nombre = "", apellido = "", email = "";
-        int menu = 0, dni = 0, comision = 0;
-        ArrayList<Alumno> listaDeAlumnos = new ArrayList<Alumno>();
+        int menu = 0, dni = 0, comision = 0;        
         GestionAlumno miGestion = new GestionAlumno();
 
         // Crear un panel personalizado para incluir la imagen y el mensaje

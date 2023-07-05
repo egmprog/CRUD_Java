@@ -33,15 +33,17 @@ public class GestionAlumno {
         nombre = JOptionPane.showInputDialog("Ingrese el nombre del alumno");
         if (nombre.length() > 1 && nombre.length() < 61) {
         } else {
-            JOptionPane.showMessageDialog(null, "El nombre no es válido  (entre 1 y 60 caracteres)",
+            JOptionPane.showMessageDialog(null, "El nombre no es válido  (entre 2 y 60 caracteres)",
                     "Error en la carga", JOptionPane.ERROR_MESSAGE);
+            nombre = JOptionPane.showInputDialog("Ingrese el nombre del alumno");
         }
 
         apellido = JOptionPane.showInputDialog("Ingrese el apellido del alumno");
         if (apellido.length() > 1 && apellido.length() < 61) {
         } else {
-            JOptionPane.showMessageDialog(null, "El apellido no es válido  (entre 1 y 60 caracteres)",
+            JOptionPane.showMessageDialog(null, "El apellido no es válido  (entre 2 y 60 caracteres)",
                     "Error en la carga", JOptionPane.ERROR_MESSAGE);
+             apellido = JOptionPane.showInputDialog("Ingrese el apellido del alumno");
         }
         // cargar y validar DNI
         // en este caso try + catch se usa para evitar que el programa se rompa si no se
