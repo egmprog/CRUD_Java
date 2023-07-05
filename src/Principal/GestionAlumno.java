@@ -335,7 +335,7 @@ public class GestionAlumno {
         if (encontrado) {
 
         } else {
-            JOptionPane.showMessageDialog(null, "El término " + aBuscar + " NO se ha encontrado", "Fin de la búsqueda",
+            JOptionPane.showMessageDialog(null, "Se buscaba el término " + aBuscar +"\n"+" Fin de la búsqueda", "Fin de la búsqueda",
                     JOptionPane.ERROR_MESSAGE);
         }
 

@@ -1,6 +1,7 @@
-Apellidos, Nombres, DNI, Email, Comision
+Nombres, Apellidos, DNI, Email, Comision
 Analia,Garcia,85296347,ana@gmail.com,12345
 Lionel,Fernandez,45685236,aaa@bb.nn,12345
 Pedro,Uma,45685296,pepe@aa.bb,12345
-Fernando, Maza, 58692354, maza@aaa.bb, 45678
+Fernando,Maza,58692354,maza@aaa.com,45678
 Amilcar, Roel, 56952145, roel@aa.bb, 12345
+Rodrigo, Alegre, 56912365, rodri@aa.bb, 12345
