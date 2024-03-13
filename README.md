@@ -4,7 +4,7 @@ Diseño y desarrollo de un programa en Java que implemente un CRUD (Create, Read
 
 El programa tiene las siguientes funcionalidades:
 
-1.	Crear un nuevo alumno: El usuario podrá ingresar el nombre, apellido, email, DNI del alumno a través de campos de texto en la interfaz gráfica.
+1.	Crea un nuevo alumno: El usuario podrá ingresar el nombre, apellido, email, DNI del alumno a través de campos de texto en la interfaz gráfica.
 
 Al seleccionar la opción "Agregar", se crea un nuevo objeto Alumno con los datos ingresados y se guardarán en el archivo de texto.
 
