@@ -1,4 +1,4 @@
-## CRUD en Java
+## CRUD en Java 💻
 
 Diseño y desarrollo de un programa en Java que implemente un CRUD (Create, Read, Update, Delete) para gestionar los datos de alumnos. El programa utiliza la biblioteca Swing para la interfaz gráfica y almacena los datos en un archivo de texto.
 
